@@ -8,7 +8,7 @@ class Start extends Component {
         return(
             <div>
                 <div>This is start page</div>
-                <a href={"/Overview"}>Go to Overview</a>
+                <a href={"/overview"}>Go to Overview</a>
 
 
             </div>
