@@ -9,6 +9,7 @@ import './Home.css';
 
 import Start from './Start';
 import Overview from './Overview';
+import Income from './Income';
 
 
 class Home extends Component {
@@ -26,6 +27,7 @@ class Home extends Component {
                         <Route exact path={"/"} component={Start}/>
                         <Route path={"/start"} component={Start}/>
                         <Route path={"/overview"} component={Overview}/>
+                        <Route path={"/income"} component={Income}/>
                     </div>
                 </Router>
             </div>

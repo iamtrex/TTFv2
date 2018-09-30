@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 import './style.css';
 
 import {connect} from 'react-redux';
-import {addIncome} from '../actions/incomeActions';
+import {addIncome, showHideAddIncome} from '../actions/incomeActions';
 import {Link} from "react-router-dom";
 
+import AddForm from '../components/AddForm';
 
 
-class Start extends Component {
+class Income extends Component {
     componentWillMount(){
 
     }
@@ -18,12 +19,16 @@ class Start extends Component {
         console.log("Need to add Income");
     }
 
+
+    handleShowIncomeClicked(){
+        this.props.showHideIncome(!this.props.income.showAdd);
+    }
+
     render(){
         const mappedIncome = this.props.income.income.map(i =>
             <li key={i.id}>
                 {i.name} ${i.amount}
             </li>);
-
 
         return(
             <div>
@@ -33,14 +38,14 @@ class Start extends Component {
                 <button onClick={()=>{window.location.href="/overview"}}>Go to Overview</button>
                 <br/>
                 <Link to={"/overview"}>Overview</Link>
-                <Link to={"/income"}>Income</Link>
                 <hr/>
                 <ul>
                     {mappedIncome}
                 </ul>
                 <hr/>
-                <input type={"text"} id={"salary-value"}/>
-                <button onClick={this.handleAddIncomeClicked.bind(this)}>Add Income</button>
+                <button onClick={this.handleShowIncomeClicked.bind(this)}>Show Add Dia</button>
+                {this.props.income.showAdd ? <AddForm addIncome={this.props.addIncome}/>: null}
+
             </div>
         )
     }
@@ -49,14 +54,16 @@ class Start extends Component {
 
 
 const mapStateToProps = state =>({
-    income: state.income
+    income: state.income,
+    showAdd: state.showAdd,
 });
 
 const mapDispatchToProps = dispatch =>({
     addIncome: amount => dispatch(addIncome(amount)),
+    showHideIncome: bool => dispatch(showHideAddIncome(bool)),
 });
 
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(Start)
+)(Income)
