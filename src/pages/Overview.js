@@ -2,8 +2,11 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import './style.css';
 
+import {connect} from "react-redux";
+import {addIncome} from "../actions/incomeActions";
 
-class Start extends Component {
+
+class Overview extends Component {
     render(){
         return(
             <div>
@@ -15,4 +18,17 @@ class Start extends Component {
     }
 }
 
-export default Start;
+
+const mapStateToProps = state =>({
+    income: state.income
+});
+
+const mapDispatchToProps = dispatch =>({
+    addIncome: amount => dispatch(addIncome(amount)),
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Overview)
+
