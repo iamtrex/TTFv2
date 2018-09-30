@@ -4,6 +4,7 @@ import './style.css';
 
 import {connect} from "react-redux";
 import {addIncome} from "../actions/incomeActions";
+import {Link} from "react-router-dom";
 
 
 class Overview extends Component {
@@ -12,7 +13,12 @@ class Overview extends Component {
             <div>
                 <div>This is overview page</div>
                 <a href={"/start"}>Go to Start</a>
-
+                <br/>
+                <Link to={"/start"}>Start</Link>
+                <br/>
+                <button>
+                    <Link to={"/start"}>Start Button</Link>
+                </button>
             </div>
         )
     }

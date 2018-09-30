@@ -4,6 +4,7 @@ import './style.css';
 
 import {connect} from 'react-redux';
 import {addIncome} from '../actions/incomeActions';
+import {Link} from "react-router-dom";
 
 
 
@@ -23,7 +24,10 @@ class Start extends Component {
             <div>
                 <div>This is start page</div>
                 <a href={"/overview"}>Go to Overview</a>
+                <br/>
                 <button onClick={()=>{window.location.href="/overview"}}>Go to Overview</button>
+                <br/>
+                <Link to={"/overview"}>Overview</Link>
                 <hr/>
                 <ul>
                     {mappedIncome}
