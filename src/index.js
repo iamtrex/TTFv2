@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import store from './store/store';
 
-import './index.css';
 import Home from './pages/Home';
 import registerServiceWorker from './registerServiceWorker';
 

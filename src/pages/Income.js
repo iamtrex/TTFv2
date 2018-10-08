@@ -14,11 +14,6 @@ class Income extends Component {
 
     }
 
-    handleAddIncomeClicked(){
-        this.props.addIncome(document.getElementById("salary-value").value);
-        this.props.showHideIncome(false);
-    }
-
 
     handleShowIncomeClicked(){
         this.props.showHideIncome(!this.props.income.showAdd);
@@ -27,24 +22,23 @@ class Income extends Component {
     render(){
 
         const mappedIncome = this.props.income.income.map(i =>
-            <li key={i.id}>
-                {i.name} ${i.amount}
-            </li>);
+        {
+            let growthTag = i.growth;
+
+            growthTag = i.growthType === "percent" ? growthTag + "%" : "$" + growthTag;
+
+            return <li key={i.id}>
+                        {i.name} Current Annual ${i.annualSalary} with {growthTag} Annual Growth</li>
+        });
+
 
         return(
-            <div>
-                <div>This is start page</div>
-                <a href={"/overview"}>Go to Overview</a>
-                <br/>
-                <button onClick={()=>{window.location.href="/overview"}}>Go to Overview</button>
-                <br/>
-                <Link to={"/overview"}>Overview</Link>
-                <hr/>
+            <div className={"flex-div"}>
+                <h1>Income</h1>
                 <ul>
                     {mappedIncome}
                 </ul>
-                <hr/>
-                <button onClick={this.handleShowIncomeClicked.bind(this)}>Show Add Dia</button>
+                <button onClick={this.handleShowIncomeClicked.bind(this)}>Add New Income</button>
                 {this.props.income.showAdd ? <AddForm addIncome={this.props.addIncome} showHideIncome={this.props.showHideIncome}/> : null}
 
 

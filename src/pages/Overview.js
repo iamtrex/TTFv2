@@ -11,11 +11,6 @@ class Overview extends Component {
     render(){
         return(
             <div>
-                <div>This is overview page</div>
-                <a href={"/start"}>Go to Start</a>
-                <br/>
-                <Link to={"/start"}>Start</Link>
-                <br/>
                 <button>
                     <Link to={"/start"}>Start Button</Link>
                 </button>

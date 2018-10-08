@@ -1,0 +1,65 @@
+
+body{
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 100%;
+    font-size: 10px;
+}
+#root{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}
+.root{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+.header{
+    flex: 0 1 auto;
+}
+.content{
+    flex: 1 1 auto;
+}
+.router-div{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div{
+    text-align: center;
+    font: 2rem "Calibri";
+}
+
+.flex-container{
+    display: flex;
+}
+.flex-div-grow{
+    height: 100%;
+    flex: 1 1 auto;
+    display: block;
+    margin: 0 auto auto;
+}
+.flex-div-nogrow{
+    flex: 0 0 auto;
+    display: block;
+    margin: auto;
+}
+
+
+.right-button-div, .left-button-div {
+    width: 5em;
+    background-color: lightcyan;
+    height: 100%;
+}
+
+.full-height-button{
+    height: 100%;
+}

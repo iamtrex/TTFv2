@@ -1,19 +1,35 @@
 /*General Styles{}*/
-html{
-    font-size: 10px;
-}
-div{
-    text-align: center;
-    font: 2rem "Calibri";
-
-}
-
+@import "overall-spacing.css";
 .title{
     font-weight: bold;
 }
+
 select, option, input{
     font-size: 1.8rem;
 }
+
+
+
+.select-div{
+    min-width: 200px;
+    width: 200px;
+    max-width: 200px;
+    border: black 1px solid;
+}
+
+.select{
+    font-size: 1.8rem;
+    width: 10em;
+}
+
+.spanning-div{
+    width: 100%;
+}
+
+.small{
+    width: 500px;
+}
+
 .inline-div{
     display: inline;
     margin-left: 0.2em;
@@ -22,8 +38,9 @@ select, option, input{
 
 .basic-div{
     padding: 0.2em;
-
+    width: 100%;
 }
+
 .Big{
 
 }

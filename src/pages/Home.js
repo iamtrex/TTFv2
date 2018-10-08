@@ -5,8 +5,6 @@ import{
     Route,
 } from 'react-router-dom'
 
-import './Home.css';
-
 import Start from './Start';
 import Overview from './Overview';
 import Income from './Income';
@@ -16,20 +14,27 @@ class Home extends Component {
     render() {
         return (
             <div className="root">
-                <header>
+                <div className={"header"}>
                     <h1>This is a header...</h1>
-                </header>
-                <div className="SomeText">
-                    Hello World
                 </div>
-                <Router>
-                    <div id={"Content"}>
-                        <Route exact path={"/"} component={Start}/>
-                        <Route path={"/start"} component={Start}/>
-                        <Route path={"/overview"} component={Overview}/>
-                        <Route path={"/income"} component={Income}/>
+                <div className={"content flex-container spanning-div"}>
+                    <div className={"left-button-div flex-div-nogrow"}>
+                        <button>Prev</button>
                     </div>
-                </Router>
+                    <div className={"left-button-div flex-div-grow"}>
+                        <Router>
+                            <div className={"router-div"}>
+                                <Route exact path={"/"} component={Start}/>
+                                <Route path={"/start"} component={Start}/>
+                                <Route path={"/overview"} component={Overview}/>
+                                <Route path={"/income"} component={Income}/>
+                            </div>
+                        </Router>
+                    </div>
+                    <div className={"right-button-div flex-div-nogrow"}>
+                        <button className={"full-height-button"}>Next</button>
+                    </div>
+                </div>
             </div>
         );
     }

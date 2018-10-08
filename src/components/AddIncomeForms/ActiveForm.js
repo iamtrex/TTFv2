@@ -68,8 +68,7 @@ class ActiveForm extends Component {
     render() {
         return(
             <div>
-                Active Income
-                <br/>
+                <div className={"spanning-div"}>Active Income</div>
                 Salary Rate: $ <input onChange={this.handleSalaryChange.bind(this)} id="salary" type={"number"}></input>
                 <p> per </p>
                 <select id={"salary_rate"} onChange={this.handleChangeRate.bind(this)}>
