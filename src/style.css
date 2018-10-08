@@ -1,0 +1,29 @@
+/*General Styles{}*/
+html{
+    font-size: 10px;
+}
+div{
+    text-align: center;
+    font: 2rem "Calibri";
+
+}
+
+.title{
+    font-weight: bold;
+}
+select, option, input{
+    font-size: 1.8rem;
+}
+.inline-div{
+    display: inline;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+.basic-div{
+    padding: 0.2em;
+
+}
+.Big{
+
+}

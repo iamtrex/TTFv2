@@ -15,7 +15,7 @@ import Income from './Income';
 class Home extends Component {
     render() {
         return (
-            <div className="Home">
+            <div className="root">
                 <header>
                     <h1>This is a header...</h1>
                 </header>

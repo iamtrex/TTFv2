@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './style.css';
+import '../style.css';
 
 import {connect} from "react-redux";
 import {addIncome} from "../actions/incomeActions";

@@ -3,10 +3,7 @@ export function addIncome(amount){
 
     return{
         type: "ADD_INCOME",
-        payload:{
-            name: "Salaryx",
-            amount: amount
-        }
+        payload: amount,
     }
 }
 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import './style.css';
+import '../style.css';
 
 import {connect} from 'react-redux';
 import {addIncome, showHideAddIncome} from '../actions/incomeActions';
@@ -16,7 +16,7 @@ class Income extends Component {
 
     handleAddIncomeClicked(){
         this.props.addIncome(document.getElementById("salary-value").value);
-        console.log("Need to add Income");
+        this.props.showHideIncome(false);
     }
 
 
@@ -25,6 +25,7 @@ class Income extends Component {
     }
 
     render(){
+
         const mappedIncome = this.props.income.income.map(i =>
             <li key={i.id}>
                 {i.name} ${i.amount}
@@ -44,7 +45,8 @@ class Income extends Component {
                 </ul>
                 <hr/>
                 <button onClick={this.handleShowIncomeClicked.bind(this)}>Show Add Dia</button>
-                {this.props.income.showAdd ? <AddForm addIncome={this.props.addIncome}/>: null}
+                {this.props.income.showAdd ? <AddForm addIncome={this.props.addIncome} showHideIncome={this.props.showHideIncome}/> : null}
+
 
             </div>
         )
