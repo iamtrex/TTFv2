@@ -6,7 +6,7 @@ import FreqChooser from './FreqChooser';
 
 import '../style.css';
 
-class AddForm extends Component {
+class PassiveAddForm extends Component {
 
     IN_YEAR = {
         "year": 1,
@@ -24,6 +24,10 @@ class AddForm extends Component {
             showFreq4: false,
             salary: 0
         };
+    }
+
+    cancelIncome(){
+        this.props.showHideIncome(false);
     }
 
     handleFreqPeriodChange() {
@@ -151,66 +155,12 @@ class AddForm extends Component {
                         </div>
                     </div>
 
-                    <div className={"basic-div"}>
-                        <div className={"inline-div title"}>Base Rate</div>
-                        <div className={"inline-div"}><input onChange={this.handleSalaryChange.bind(this)}
-                                                             id={"base-rate-field"}/></div>
-                        <div className={"inline-div title"}>per</div>
-                        <div className={"inline-div"}>
-                            <select onChange={this.handleFreqPeriodChange.bind(this)} id={"freq-1"}
-                                    defaultValue={"year"}>
-                                <option value={"hour"}>Hour</option>
-                                <option value={"day"}>Day</option>
-                                <option value={"week"}>Week</option>
-                                <option value={"month"}>Month</option>
-                                <option value={"year"}>Year</option>
-                            </select>
-                        </div>
+                    <div className={"inline-div"}>
+                        <input type={"submit"} value="Submit"/>
                     </div>
-
-                    <div className={"basic-div"}>
-                        {this.state.showFreq2 ?
-                            <FreqChooser handleOptionsChange={this.handleSalaryChange.bind(this)}
-                                         handleSalaryChange={this.handleSalaryChange.bind(this)}
-                                         handleFreqPeriodChange={this.handleFreqPeriodChange.bind(this)}
-                                         num={2}
-                                         prevSelect={document.getElementById("freq-1").value}/> : null}
-                        {this.state.showFreq3 ?
-                            <FreqChooser handleOptionsChange={this.handleSalaryChange.bind(this)}
-                                         handleSalaryChange={this.handleSalaryChange.bind(this)}
-                                         handleFreqPeriodChange={this.handleFreqPeriodChange.bind(this)}
-                                         num={3}
-                                         prevSelect={document.getElementById("freq-2").value}/> : null}
-                        {this.state.showFreq4 ?
-                            <FreqChooser handleOptionsChange={this.handleSalaryChange.bind(this)}
-                                         handleSalaryChange={this.handleSalaryChange.bind(this)}
-                                         handleFreqPeriodChange={this.handleFreqPeriodChange.bind(this)}
-                                         num={4}
-                                         prevSelect={document.getElementById("freq-3").value}/> : null}
+                    <div className={"inline-div"}>
+                        <button onClick={this.cancelIncome.bind(this)}>Cancel</button>
                     </div>
-
-
-                    {this.state.salary !== "" ?
-                        <div className={"basic-div"}>
-                            <div className={"inline-div"}>Current Annual Salary</div>
-                            <div className={"inline-div"}/>
-                            {this.state.salary}
-                        </div> :
-                        <div className={"basic-div"}>Fill out fields to see Annual Salary</div>}
-
-                    <div className={"basic-div"}>
-                        <div className={"inline-div title"}>Expected Growth</div>
-                        <div className={"inline-div"}>
-                            <input type={"text"} onChange={this.handleGrowthChange.bind(this)} id={"growth-field"}/>
-                        </div>
-                        <div className={"inline-div"}>
-                            <select onChange={this.handleGrowthChange.bind(this)} id={"growth-type"}>
-                                <option value={"percent"}>%</option>
-                                <option value={"flat"}>$</option>
-                            </select>
-                        </div>
-                    </div>
-                    <input type={"submit"} value="Submit"/>
                 </form>
             </div>
         );
@@ -218,10 +168,10 @@ class AddForm extends Component {
 
 }
 
-AddForm.propTypes = {
+PassiveAddForm.propTypes = {
     addIncome: PropTypes.func.isRequired,
     showHideIncome: PropTypes.func.isRequired
 };
 
 
-export default AddForm;
+export default PassiveAddForm;

@@ -16,4 +16,13 @@ export function showHideAddIncome(bool){
     }
 }
 
+export function changeIncomeType(type){
+    return{
+        type: "CHANGE_INCOME_TYPE",
+        payload:{
+            type: type,
+        }
+    }
+}
+
 //Export a function for each action...

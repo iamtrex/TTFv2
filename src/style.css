@@ -4,11 +4,13 @@
     font-weight: bold;
 }
 
-select, option, input{
+select, option, input, button{
     font-size: 1.8rem;
 }
 
-
+.textfield{
+    width: 18rem;
+}
 
 .select-div{
     min-width: 200px;
@@ -23,7 +25,9 @@ select, option, input{
 }
 
 .spanning-div{
+    padding: 0;
     width: 100%;
+    margin: 0.5em 0;
 }
 
 .small{
@@ -37,7 +41,7 @@ select, option, input{
 }
 
 .basic-div{
-    padding: 0.2em;
+    margin: 0.2em;
     width: 100%;
 }
 
